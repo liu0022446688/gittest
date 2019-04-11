@@ -19,7 +19,7 @@ public class MsgProducer implements RabbitTemplate.ConfirmCallback {
 	@Autowired
 	public MsgProducer(RabbitTemplate rabbitTemplate) {
 		this.rabbitTemplate = rabbitTemplate;
-		rabbitTemplate.setConfirmCallback(this);
+		rabbitTemplate.setConfirmCallback(this);  
 		// rabbitTemplate如果为单例的话，那回调就是最后设置的内容
 	}
 

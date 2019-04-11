@@ -44,7 +44,6 @@ public class MsgProducer implements RabbitTemplate.ConfirmCallback {
 	 * 消息发送，这里不设置routing_key,因为设置了也无效，发送端的routing_key写任何字符都会被忽略。
 	 */
 	public void sendAll(String content) {
-
 		rabbitTemplate.convertAndSend("fanoutExchange", "", content);
 
 	}

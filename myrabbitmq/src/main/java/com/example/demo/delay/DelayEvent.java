@@ -17,10 +17,10 @@ public class DelayEvent implements Delayed {
 	@Override
 	public int compareTo(Delayed o) {
 		long result = this.getDelay(TimeUnit.NANOSECONDS) - o.getDelay(TimeUnit.NANOSECONDS);
-        if (result < 0) {
+        if (result < 0) { //时间未到，还需要等待
             return -1;
         } else if (result > 0) {
-            return 1;
+            return 1;//传入的对象，已经过期，不需要等待了
         } else {
             return 0;
         }
